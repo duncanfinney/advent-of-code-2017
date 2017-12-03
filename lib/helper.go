@@ -8,7 +8,7 @@ import (
 )
 
 func ReadInput(fileName string) string {
-	bytes, err := ioutil.ReadFile("input/" + fileName)
+	bytes, err := ioutil.ReadFile(fileName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -21,4 +21,12 @@ func Atoi(s string) int {
 		log.Fatal(err)
 	}
 	return i
+}
+
+func Atois(items []string) []int {
+	ret := []int{}
+	for _, item := range items {
+		ret = append(ret, Atoi(item))
+	}
+	return ret
 }
